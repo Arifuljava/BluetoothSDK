@@ -149,6 +149,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="bluetooth:" destination="4VW-8U-cWT" eventType="touchDown" id="3UH-YA-16l"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-0w-7vE">
                                                 <rect key="frame" x="8" y="192" width="398" height="40"/>
@@ -165,6 +168,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="wifi:" destination="4VW-8U-cWT" eventType="touchDown" id="0xn-4z-6IV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0t0-Vs-lpN">
                                                 <rect key="frame" x="8" y="242" width="398" height="40"/>
@@ -181,6 +187,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="cloud:" destination="4VW-8U-cWT" eventType="touchDown" id="4yG-Bu-ZPn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -228,10 +237,31 @@
                             <constraint firstItem="TyY-3f-SfG" firstAttribute="top" secondItem="bUZ-6A-RD1" secondAttribute="top" id="u3W-zK-8bX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bluetoothButton" destination="I0q-bh-xIw" id="FZ8-wc-AYd"/>
+                        <outlet property="cloudButton" destination="0t0-Vs-lpN" id="Xo5-2b-BVs"/>
+                        <outlet property="labeltext" destination="U8t-eF-tHG" id="nzD-ZU-nvq"/>
+                        <outlet property="wifiButton" destination="DdT-0w-7vE" id="sZx-Ir-Ot3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJb-KE-evx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="781.15942028985512" y="95.758928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Q12-7V-pIR">
+            <objects>
+                <viewController id="rmV-vb-O0V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tX2-EA-kLn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3AN-9B-eMx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBw-ZX-gDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="96"/>
         </scene>
     </scenes>
     <resources>
