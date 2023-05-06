@@ -31,6 +31,8 @@
 		2524D13E2A05F46300621D53 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D13D2A05F46300621D53 /* FirebaseStorageSwift-Beta */; };
 		2524D1402A05F4BC00621D53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2524D13F2A05F4BC00621D53 /* GoogleService-Info.plist */; };
 		2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1412A05FD7700621D53 /* PrinterCategories.swift */; };
+		2524D1442A06107500621D53 /* WifiActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1432A06107500621D53 /* WifiActivity.swift */; };
+		2524D1462A06108B00621D53 /* CloudActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1452A06108B00621D53 /* CloudActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		251D37132A03C79B00F4CD15 /* BluetoothSDKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSDKUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2524D13F2A05F4BC00621D53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2524D1412A05FD7700621D53 /* PrinterCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterCategories.swift; sourceTree = "<group>"; };
+		2524D1432A06107500621D53 /* WifiActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiActivity.swift; sourceTree = "<group>"; };
+		2524D1452A06108B00621D53 /* CloudActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				251D36F02A03C79A00F4CD15 /* AppDelegate.swift */,
 				251D36F22A03C79A00F4CD15 /* SceneDelegate.swift */,
 				251D36F42A03C79A00F4CD15 /* ViewController.swift */,
+				2524D1432A06107500621D53 /* WifiActivity.swift */,
+				2524D1452A06108B00621D53 /* CloudActivity.swift */,
 				2524D1412A05FD7700621D53 /* PrinterCategories.swift */,
 				251D36F62A03C79A00F4CD15 /* Main.storyboard */,
 				251D36F92A03C79B00F4CD15 /* Assets.xcassets */,
@@ -309,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2524D1462A06108B00621D53 /* CloudActivity.swift in Sources */,
 				2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */,
+				2524D1442A06107500621D53 /* WifiActivity.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,

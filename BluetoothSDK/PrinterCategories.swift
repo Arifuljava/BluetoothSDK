@@ -254,8 +254,12 @@ class PrinterCategories: UIViewController {
     
 
     @IBAction func wifi(_ sender: UIButton) {
+        let sec = storyboard?.instantiateViewController(identifier: "wifii") as! WifiActivity
+                    present(sec,animated: true)
     }
     
     @IBAction func cloud(_ sender: UIButton) {
+        let sec = storyboard?.instantiateViewController(identifier: "cloude") as! CloudActivity
+                    present(sec,animated: true)
     }
 }
