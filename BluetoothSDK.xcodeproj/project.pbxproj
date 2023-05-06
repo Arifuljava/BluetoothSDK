@@ -33,6 +33,9 @@
 		2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1412A05FD7700621D53 /* PrinterCategories.swift */; };
 		2524D1442A06107500621D53 /* WifiActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1432A06107500621D53 /* WifiActivity.swift */; };
 		2524D1462A06108B00621D53 /* CloudActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1452A06108B00621D53 /* CloudActivity.swift */; };
+		2524D1482A06140900621D53 /* BluetoothSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1472A06140900621D53 /* BluetoothSecond.swift */; };
+		2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1492A061C8B00621D53 /* BluetoothDeList.swift */; };
+		2524D14C2A06243A00621D53 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D14B2A06243A00621D53 /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		2524D1412A05FD7700621D53 /* PrinterCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterCategories.swift; sourceTree = "<group>"; };
 		2524D1432A06107500621D53 /* WifiActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiActivity.swift; sourceTree = "<group>"; };
 		2524D1452A06108B00621D53 /* CloudActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudActivity.swift; sourceTree = "<group>"; };
+		2524D1472A06140900621D53 /* BluetoothSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSecond.swift; sourceTree = "<group>"; };
+		2524D1492A061C8B00621D53 /* BluetoothDeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeList.swift; sourceTree = "<group>"; };
+		2524D14B2A06243A00621D53 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,13 +143,16 @@
 				251D36F02A03C79A00F4CD15 /* AppDelegate.swift */,
 				251D36F22A03C79A00F4CD15 /* SceneDelegate.swift */,
 				251D36F42A03C79A00F4CD15 /* ViewController.swift */,
+				2524D1492A061C8B00621D53 /* BluetoothDeList.swift */,
 				2524D1432A06107500621D53 /* WifiActivity.swift */,
 				2524D1452A06108B00621D53 /* CloudActivity.swift */,
+				2524D1472A06140900621D53 /* BluetoothSecond.swift */,
 				2524D1412A05FD7700621D53 /* PrinterCategories.swift */,
 				251D36F62A03C79A00F4CD15 /* Main.storyboard */,
 				251D36F92A03C79B00F4CD15 /* Assets.xcassets */,
 				251D36FB2A03C79B00F4CD15 /* LaunchScreen.storyboard */,
 				251D36FE2A03C79B00F4CD15 /* Info.plist */,
+				2524D14B2A06243A00621D53 /* Toast.swift */,
 			);
 			path = BluetoothSDK;
 			sourceTree = "<group>";
@@ -316,10 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2524D1462A06108B00621D53 /* CloudActivity.swift in Sources */,
+				2524D1482A06140900621D53 /* BluetoothSecond.swift in Sources */,
 				2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */,
+				2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */,
 				2524D1442A06107500621D53 /* WifiActivity.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
+				2524D14C2A06243A00621D53 /* Toast.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

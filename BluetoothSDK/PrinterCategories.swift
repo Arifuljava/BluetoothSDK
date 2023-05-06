@@ -57,6 +57,8 @@ class PrinterCategories: UIViewController {
                 statusMessage = "Bluetooth Status: Turned On"
                 //TestView.text = statusMessage
                 //labeltext.text = statusMessage
+                let sec = storyboard?.instantiateViewController(identifier: "bluesecond") as! BluetoothSecond
+                            present(sec,animated: true)
 
             case .poweredOff:
                 statusMessage = "Bluetooth Status: Turned Off"
@@ -191,15 +193,17 @@ class PrinterCategories: UIViewController {
                 self.present(alert, animated: true, completion: nil)
 
             case .unknown:
+                let sec = storyboard?.instantiateViewController(identifier: "bluesecond") as! BluetoothDeList
+                            present(sec,animated: true)
                 statusMessage = "Bluetooth Status: Unknown"
                /// TestView.text = statusMessage
                 let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is unknown. Please check bluetooth again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     switch action.style{
                         case .default:
-                            let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
-                            let app = UIApplication.shared
-                            app.openURL(url!)
+                        let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                        let app = UIApplication.shared
+                        app.openURL(url!)
                         print("default")
                         
                        
@@ -231,7 +235,7 @@ class PrinterCategories: UIViewController {
                 }))
                 self.present(alert, animated: true, completion: nil)
                 
-                labeltext.text = statusMessage
+                //labeltext.text = statusMessage///
             }
 
             print(statusMessage)
@@ -256,10 +260,12 @@ class PrinterCategories: UIViewController {
     @IBAction func wifi(_ sender: UIButton) {
         let sec = storyboard?.instantiateViewController(identifier: "wifii") as! WifiActivity
                     present(sec,animated: true)
+        
     }
     
     @IBAction func cloud(_ sender: UIButton) {
         let sec = storyboard?.instantiateViewController(identifier: "cloude") as! CloudActivity
                     present(sec,animated: true)
+        
     }
 }

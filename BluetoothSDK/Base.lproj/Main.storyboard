@@ -103,6 +103,107 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </scene>
+        <!--Bluetooth De List-->
+        <scene sceneID="Zem-f4-rNx">
+            <objects>
+                <viewController storyboardIdentifier="bluesecond" id="BCp-fy-7vI" customClass="BluetoothDeList" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ulu-h6-oiK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1R-Pn-qhK">
+                                <rect key="frame" x="8" y="67" width="398" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Td9-sr-Bn5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYC-tj-XMN">
+                                <rect key="frame" x="8" y="128" width="398" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7AM-Sv-Dhd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Bluetooth ON" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" cornerRadius="12" strokeWidth="2" strokeOutset="2">
+                                        <color key="backgroundColor" red="0.78039215689999997" green="0.59146211000000004" blue="0.393257095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickblueOn:" destination="BCp-fy-7vI" eventType="touchDown" id="TWi-ux-G2n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7y-mr-79i">
+                                <rect key="frame" x="8" y="180" width="398" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B6p-Lw-23e"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="nj0-bY-B0P"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Bluetooth OFF" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" cornerRadius="12" strokeWidth="2" strokeOutset="2">
+                                        <color key="backgroundColor" red="0.78039215689999997" green="0.59146211000000004" blue="0.393257095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clickOFF:" destination="BCp-fy-7vI" eventType="touchDown" id="EPY-MA-nne"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwj-bM-iPi">
+                                <rect key="frame" x="8" y="232" width="398" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PR4-kX-HTC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="jxs-kD-5h9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sync Devices" cornerStyle="dynamic">
+                                    <backgroundConfiguration key="background" cornerRadius="12" strokeWidth="2" strokeOutset="2">
+                                        <color key="backgroundColor" red="0.78039215689999997" green="0.59146211000000004" blue="0.393257095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clicksync:" destination="BCp-fy-7vI" eventType="touchDown" id="59T-8r-nEi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wzq-2i-yTJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pwj-bM-iPi" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="7jz-Yu-XV9"/>
+                            <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="pwj-bM-iPi" secondAttribute="trailing" constant="8" id="80V-QA-15p"/>
+                            <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="j7y-mr-79i" secondAttribute="trailing" constant="8" id="Hyn-4H-FMU"/>
+                            <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="O1R-Pn-qhK" secondAttribute="trailing" constant="8" id="LrM-3L-8Jh"/>
+                            <constraint firstItem="pwj-bM-iPi" firstAttribute="top" secondItem="j7y-mr-79i" secondAttribute="bottom" constant="12" id="Qbq-4c-SSl"/>
+                            <constraint firstItem="VYC-tj-XMN" firstAttribute="top" secondItem="O1R-Pn-qhK" secondAttribute="bottom" constant="31" id="T9o-K9-nNP"/>
+                            <constraint firstItem="VYC-tj-XMN" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="Ysg-K8-bsP"/>
+                            <constraint firstItem="O1R-Pn-qhK" firstAttribute="top" secondItem="wzq-2i-yTJ" secondAttribute="top" constant="23" id="ZaZ-gn-YVu"/>
+                            <constraint firstItem="j7y-mr-79i" firstAttribute="top" secondItem="VYC-tj-XMN" secondAttribute="bottom" constant="12" id="bgH-3L-6jD"/>
+                            <constraint firstItem="O1R-Pn-qhK" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="jad-1X-OyN"/>
+                            <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="VYC-tj-XMN" secondAttribute="trailing" constant="8" id="uVU-KC-XW2"/>
+                            <constraint firstItem="j7y-mr-79i" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="zXa-1H-VQl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blueOff" destination="j7y-mr-79i" id="yZw-Ee-1CS"/>
+                        <outlet property="blueOn" destination="VYC-tj-XMN" id="AWO-2Y-2r7"/>
+                        <outlet property="syncButton" destination="pwj-bM-iPi" id="Rrg-ew-AWF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vt8-cO-vdk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265.21739130434787" y="762.05357142857144"/>
+        </scene>
         <!--Printer Categories-->
         <scene sceneID="4cz-Ee-XgU">
             <objects>
