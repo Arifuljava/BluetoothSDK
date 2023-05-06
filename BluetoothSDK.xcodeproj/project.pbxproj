@@ -36,6 +36,10 @@
 		2524D1482A06140900621D53 /* BluetoothSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1472A06140900621D53 /* BluetoothSecond.swift */; };
 		2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1492A061C8B00621D53 /* BluetoothDeList.swift */; };
 		2524D14C2A06243A00621D53 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D14B2A06243A00621D53 /* Toast.swift */; };
+		2524D14E2A063C5E00621D53 /* MyToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D14D2A063C5E00621D53 /* MyToast.swift */; };
+		2524D1512A0648C700621D53 /* Bluejay in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D1502A0648C700621D53 /* Bluejay */; };
+		2524D1532A064CE000621D53 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1522A064CE000621D53 /* Testing.swift */; };
+		2524D18F2A06654C00621D53 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D18E2A06654C00621D53 /* Reachability */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,8 @@
 		2524D1472A06140900621D53 /* BluetoothSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSecond.swift; sourceTree = "<group>"; };
 		2524D1492A061C8B00621D53 /* BluetoothDeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeList.swift; sourceTree = "<group>"; };
 		2524D14B2A06243A00621D53 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		2524D14D2A063C5E00621D53 /* MyToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyToast.swift; sourceTree = "<group>"; };
+		2524D1522A064CE000621D53 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +96,12 @@
 				2524D12E2A05F46300621D53 /* FirebaseCrashlytics in Frameworks */,
 				2524D1262A05F46300621D53 /* FirebaseAnalytics in Frameworks */,
 				2524D1342A05F46300621D53 /* FirebaseFirestore in Frameworks */,
+				2524D18F2A06654C00621D53 /* Reachability in Frameworks */,
 				2524D13E2A05F46300621D53 /* FirebaseStorageSwift-Beta in Frameworks */,
 				2524D1382A05F46300621D53 /* FirebaseMLModelDownloader in Frameworks */,
 				2524D13A2A05F46300621D53 /* FirebaseStorage in Frameworks */,
 				2524D1322A05F46300621D53 /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				2524D1512A0648C700621D53 /* Bluejay in Frameworks */,
 				2524D13C2A05F46300621D53 /* FirebaseStorageCombine-Community in Frameworks */,
 				2524D12C2A05F46300621D53 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
@@ -153,6 +161,8 @@
 				251D36FB2A03C79B00F4CD15 /* LaunchScreen.storyboard */,
 				251D36FE2A03C79B00F4CD15 /* Info.plist */,
 				2524D14B2A06243A00621D53 /* Toast.swift */,
+				2524D14D2A063C5E00621D53 /* MyToast.swift */,
+				2524D1522A064CE000621D53 /* Testing.swift */,
 			);
 			path = BluetoothSDK;
 			sourceTree = "<group>";
@@ -204,6 +214,8 @@
 				2524D1392A05F46300621D53 /* FirebaseStorage */,
 				2524D13B2A05F46300621D53 /* FirebaseStorageCombine-Community */,
 				2524D13D2A05F46300621D53 /* FirebaseStorageSwift-Beta */,
+				2524D1502A0648C700621D53 /* Bluejay */,
+				2524D18E2A06654C00621D53 /* Reachability */,
 			);
 			productName = BluetoothSDK;
 			productReference = 251D36ED2A03C79A00F4CD15 /* BluetoothSDK.app */;
@@ -279,6 +291,8 @@
 			mainGroup = 251D36E42A03C79A00F4CD15;
 			packageReferences = (
 				2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2524D14F2A0648C700621D53 /* XCRemoteSwiftPackageReference "bluejay" */,
+				2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 251D36EE2A03C79A00F4CD15 /* Products */;
 			projectDirPath = "";
@@ -325,11 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2524D1462A06108B00621D53 /* CloudActivity.swift in Sources */,
+				2524D14E2A063C5E00621D53 /* MyToast.swift in Sources */,
 				2524D1482A06140900621D53 /* BluetoothSecond.swift in Sources */,
 				2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */,
 				2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */,
 				2524D1442A06107500621D53 /* WifiActivity.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
+				2524D1532A064CE000621D53 /* Testing.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
 				2524D14C2A06243A00621D53 /* Toast.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,
@@ -514,6 +530,7 @@
 				DEVELOPMENT_TEAM = 3K452862FK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BluetoothSDK/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BluetoothSDK;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -542,6 +559,7 @@
 				DEVELOPMENT_TEAM = 3K452862FK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BluetoothSDK/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BluetoothSDK;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -706,6 +724,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		2524D14F2A0648C700621D53 /* XCRemoteSwiftPackageReference "bluejay" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/steamclock/bluejay.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.9;
+			};
+		};
+		2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -773,6 +807,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		2524D1502A0648C700621D53 /* Bluejay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2524D14F2A0648C700621D53 /* XCRemoteSwiftPackageReference "bluejay" */;
+			productName = Bluejay;
+		};
+		2524D18E2A06654C00621D53 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

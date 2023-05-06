@@ -197,6 +197,7 @@
                     <connections>
                         <outlet property="blueOff" destination="j7y-mr-79i" id="yZw-Ee-1CS"/>
                         <outlet property="blueOn" destination="VYC-tj-XMN" id="AWO-2Y-2r7"/>
+                        <outlet property="labb" destination="O1R-Pn-qhK" id="YFj-MC-pnS"/>
                         <outlet property="syncButton" destination="pwj-bM-iPi" id="Rrg-ew-AWF"/>
                     </connections>
                 </viewController>

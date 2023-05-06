@@ -9,6 +9,9 @@ import UIKit
 import CoreBluetooth
 import CoreBluetooth
 import SwiftUI
+import SystemConfiguration
+import Reachability
+import GoogleUtilities_Reachability
 
 
 
@@ -45,7 +48,8 @@ class PrinterCategories: UIViewController {
     @IBOutlet weak var bluetoothButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+      
         // Do any additional setup after loading the view.
     }
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
@@ -254,10 +258,17 @@ class PrinterCategories: UIViewController {
                         cmc = CBPeripheralManager.init()
                         
                         peripheralManagerDidUpdateState(peripheral: cmc)
+        
+        if isInternetAvailable() {
+            print("if called Internet Connectivity success \(isInternetAvailable())");
+        } else {
+            print("else called Internet Connectivity success \(isInternetAvailable())");
+        }
     }
     
 
     @IBAction func wifi(_ sender: UIButton) {
+       
         let sec = storyboard?.instantiateViewController(identifier: "wifii") as! WifiActivity
                     present(sec,animated: true)
         
@@ -267,5 +278,26 @@ class PrinterCategories: UIViewController {
         let sec = storyboard?.instantiateViewController(identifier: "cloude") as! CloudActivity
                     present(sec,animated: true)
         
+    }
+   
+    func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+         }
+        }
+
+       var flags = SCNetworkReachabilityFlags()
+
+       if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+          return false
+       }
+       let isReachable = flags.contains(.reachable)
+       let needsConnection = flags.contains(.connectionRequired)
+       //   print(isReachable && !needsConnection)
+       return (isReachable && !needsConnection)
     }
 }
