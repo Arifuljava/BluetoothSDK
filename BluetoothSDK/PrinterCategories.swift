@@ -12,6 +12,7 @@ import SwiftUI
 import SystemConfiguration
 import Reachability
 import GoogleUtilities_Reachability
+import SPIndicator
 
 
 
@@ -59,6 +60,8 @@ class PrinterCategories: UIViewController {
             switch peripheral.state {
             case .poweredOn:
                 statusMessage = "Bluetooth Status: Turned On"
+                SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+                
                 //TestView.text = statusMessage
                 //labeltext.text = statusMessage
                 let sec = storyboard?.instantiateViewController(identifier: "bluesecond") as! BluetoothSecond
@@ -66,6 +69,7 @@ class PrinterCategories: UIViewController {
 
             case .poweredOff:
                 statusMessage = "Bluetooth Status: Turned Off"
+                SPIndicator.present(title: ""+statusMessage+" Please open bluetooth. ", message: "Bluetooth Status", preset: .done, from: .bottom)
                 //TestView.text = statusMessage
                // labeltext.text = statusMessage
                 let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is off. Please enable/ON  bluetooth.", preferredStyle: .alert)
@@ -111,11 +115,12 @@ class PrinterCategories: UIViewController {
                 statusMessage = "Bluetooth Status: Resetting"
                 //TestView.text = statusMessage
                 //labeltext.text = statusMessage
-
+                SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
             case .unauthorized:
                 statusMessage = "Bluetooth Status: Not Authorized"
                 //TestView.text = statusMessage
                 //labeltext.text = statusMessage
+                SPIndicator.present(title: ""+statusMessage+". Please check bluetooth again.", message: "Bluetooth Status", preset: .done, from: .bottom)
                 let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is not authorized. Please check bluetooth again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     switch action.style{
@@ -158,6 +163,7 @@ class PrinterCategories: UIViewController {
                 statusMessage = "Bluetooth Status: Not Supported"
                 //TestView.text = statusMessage
                // labeltext.text = statusMessage
+                SPIndicator.present(title: ""+statusMessage+". Please check bluetooth again.", message: "Bluetooth Status", preset: .done, from: .bottom)
                 let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth is not supported. Please check bluetooth again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     switch action.style{
@@ -200,6 +206,7 @@ class PrinterCategories: UIViewController {
                 let sec = storyboard?.instantiateViewController(identifier: "bluesecond") as! BluetoothDeList
                             present(sec,animated: true)
                 statusMessage = "Bluetooth Status: Unknown"
+                SPIndicator.present(title: ""+statusMessage+". Please check bluetooth again.", message: "Bluetooth Status", preset: .done, from: .bottom)
                /// TestView.text = statusMessage
                 let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is unknown. Please check bluetooth again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
