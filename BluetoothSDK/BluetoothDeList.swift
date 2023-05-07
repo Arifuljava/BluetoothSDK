@@ -11,6 +11,7 @@ import CoreBluetooth
 import Foundation
 import SPIndicator
 
+
 var managerBLE: CBCentralManager?
 var arr = Array<String>()
 class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -29,7 +30,7 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         return arr[row]
     }
     
-   
+    
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var labb: UILabel!
