@@ -22,11 +22,7 @@ class BluetoothDeList: UIViewController {
         super.viewDidLoad()
         //MyToast.show(message: "Hello, Toast!", controller: self)
         // Do any additional setup after loading the view.
-        var cmc: CBPeripheralManager!
-                   cmc = CBPeripheralManager.init()
-                   
-                   peripheralManagerDidUpdateState(peripheral: cmc)
-      
+        
         
     }
     

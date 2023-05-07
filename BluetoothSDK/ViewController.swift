@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Toast
+import SwiftUI
+import SPIndicator
 
 class ViewController: UIViewController {
 
@@ -14,11 +17,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Toast("Initilize SDK").show(self)
         // Do any additional setup after loading the view.
+        ToastView.self
+        
+        //let indicatorView = SPIndicatorView(title: "Complete", preset: .done)
+        //indicatorView.present(duration: 3)
+        
+       
+
+        // or for custom `SPIndicatorView`
+
+        //indicatorView.presentSide = .bottom
     }
 
     @IBAction func mygonext(_ sender: UIButton) {
+        SPIndicator.present(title: "Initilize Successfully", message: "bluetooth SDk successfully initilized successfully done.", preset: .done, from: .bottom)
+    
         let sec = storyboard?.instantiateViewController(identifier: "printers") as! PrinterCategories
                     present(sec,animated: true)
+        
+        
         
     
     }

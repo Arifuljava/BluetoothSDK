@@ -35,11 +35,12 @@
 		2524D1462A06108B00621D53 /* CloudActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1452A06108B00621D53 /* CloudActivity.swift */; };
 		2524D1482A06140900621D53 /* BluetoothSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1472A06140900621D53 /* BluetoothSecond.swift */; };
 		2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1492A061C8B00621D53 /* BluetoothDeList.swift */; };
-		2524D14C2A06243A00621D53 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D14B2A06243A00621D53 /* Toast.swift */; };
 		2524D14E2A063C5E00621D53 /* MyToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D14D2A063C5E00621D53 /* MyToast.swift */; };
 		2524D1512A0648C700621D53 /* Bluejay in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D1502A0648C700621D53 /* Bluejay */; };
 		2524D1532A064CE000621D53 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1522A064CE000621D53 /* Testing.swift */; };
 		2524D18F2A06654C00621D53 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D18E2A06654C00621D53 /* Reachability */; };
+		2561CDB32A07626B008025DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB22A07626B008025DD /* Toast */; };
+		2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB82A0766D0008025DD /* SPIndicator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +80,6 @@
 		2524D1452A06108B00621D53 /* CloudActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudActivity.swift; sourceTree = "<group>"; };
 		2524D1472A06140900621D53 /* BluetoothSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSecond.swift; sourceTree = "<group>"; };
 		2524D1492A061C8B00621D53 /* BluetoothDeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeList.swift; sourceTree = "<group>"; };
-		2524D14B2A06243A00621D53 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		2524D14D2A063C5E00621D53 /* MyToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyToast.swift; sourceTree = "<group>"; };
 		2524D1522A064CE000621D53 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,10 +89,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2561CDB32A07626B008025DD /* Toast in Frameworks */,
 				2524D1302A05F46300621D53 /* FirebaseDatabase in Frameworks */,
 				2524D1282A05F46300621D53 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				2524D12A2A05F46300621D53 /* FirebaseAuth in Frameworks */,
 				2524D1362A05F46300621D53 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */,
 				2524D12E2A05F46300621D53 /* FirebaseCrashlytics in Frameworks */,
 				2524D1262A05F46300621D53 /* FirebaseAnalytics in Frameworks */,
 				2524D1342A05F46300621D53 /* FirebaseFirestore in Frameworks */,
@@ -160,7 +162,6 @@
 				251D36F92A03C79B00F4CD15 /* Assets.xcassets */,
 				251D36FB2A03C79B00F4CD15 /* LaunchScreen.storyboard */,
 				251D36FE2A03C79B00F4CD15 /* Info.plist */,
-				2524D14B2A06243A00621D53 /* Toast.swift */,
 				2524D14D2A063C5E00621D53 /* MyToast.swift */,
 				2524D1522A064CE000621D53 /* Testing.swift */,
 			);
@@ -216,6 +217,8 @@
 				2524D13D2A05F46300621D53 /* FirebaseStorageSwift-Beta */,
 				2524D1502A0648C700621D53 /* Bluejay */,
 				2524D18E2A06654C00621D53 /* Reachability */,
+				2561CDB22A07626B008025DD /* Toast */,
+				2561CDB82A0766D0008025DD /* SPIndicator */,
 			);
 			productName = BluetoothSDK;
 			productReference = 251D36ED2A03C79A00F4CD15 /* BluetoothSDK.app */;
@@ -293,6 +296,8 @@
 				2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2524D14F2A0648C700621D53 /* XCRemoteSwiftPackageReference "bluejay" */,
 				2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */,
+				2561CDB12A07626B008025DD /* XCRemoteSwiftPackageReference "toast-swift" */,
+				2561CDB72A0766D0008025DD /* XCRemoteSwiftPackageReference "SPIndicator" */,
 			);
 			productRefGroup = 251D36EE2A03C79A00F4CD15 /* Products */;
 			projectDirPath = "";
@@ -347,7 +352,6 @@
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
 				2524D1532A064CE000621D53 /* Testing.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
-				2524D14C2A06243A00621D53 /* Toast.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,6 +745,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		2561CDB12A07626B008025DD /* XCRemoteSwiftPackageReference "toast-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BastiaanJansen/toast-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+		2561CDB72A0766D0008025DD /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -818,6 +838,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
+		};
+		2561CDB22A07626B008025DD /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2561CDB12A07626B008025DD /* XCRemoteSwiftPackageReference "toast-swift" */;
+			productName = Toast;
+		};
+		2561CDB82A0766D0008025DD /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2561CDB72A0766D0008025DD /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
