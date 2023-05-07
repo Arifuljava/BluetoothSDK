@@ -176,19 +176,38 @@
                                     <action selector="clicksync:" destination="BCp-fy-7vI" eventType="touchDown" id="59T-8r-nEi"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45Z-eZ-LC9">
+                                <rect key="frame" x="0.0" y="347" width="414" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Pairded bluetooth Devices" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nK-ul-EpG">
+                                <rect key="frame" x="8" y="284" width="398" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bh6-6Z-39i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wzq-2i-yTJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4nK-ul-EpG" firstAttribute="top" secondItem="pwj-bM-iPi" secondAttribute="bottom" constant="12" id="51h-vn-H2s"/>
+                            <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="4nK-ul-EpG" secondAttribute="trailing" constant="8" id="59w-JD-ak0"/>
                             <constraint firstItem="pwj-bM-iPi" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="7jz-Yu-XV9"/>
                             <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="pwj-bM-iPi" secondAttribute="trailing" constant="8" id="80V-QA-15p"/>
                             <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="j7y-mr-79i" secondAttribute="trailing" constant="8" id="Hyn-4H-FMU"/>
+                            <constraint firstItem="45Z-eZ-LC9" firstAttribute="top" secondItem="pwj-bM-iPi" secondAttribute="bottom" constant="75" id="LqU-lf-Zgi"/>
                             <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="O1R-Pn-qhK" secondAttribute="trailing" constant="8" id="LrM-3L-8Jh"/>
+                            <constraint firstItem="4nK-ul-EpG" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="Mg7-EK-3H3"/>
+                            <constraint firstItem="45Z-eZ-LC9" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" id="Oho-Nx-vfq"/>
                             <constraint firstItem="pwj-bM-iPi" firstAttribute="top" secondItem="j7y-mr-79i" secondAttribute="bottom" constant="12" id="Qbq-4c-SSl"/>
+                            <constraint firstItem="45Z-eZ-LC9" firstAttribute="trailing" secondItem="wzq-2i-yTJ" secondAttribute="trailing" id="Sa8-sP-7PK"/>
                             <constraint firstItem="VYC-tj-XMN" firstAttribute="top" secondItem="O1R-Pn-qhK" secondAttribute="bottom" constant="31" id="T9o-K9-nNP"/>
                             <constraint firstItem="VYC-tj-XMN" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="Ysg-K8-bsP"/>
                             <constraint firstItem="O1R-Pn-qhK" firstAttribute="top" secondItem="wzq-2i-yTJ" secondAttribute="top" constant="23" id="ZaZ-gn-YVu"/>
                             <constraint firstItem="j7y-mr-79i" firstAttribute="top" secondItem="VYC-tj-XMN" secondAttribute="bottom" constant="12" id="bgH-3L-6jD"/>
+                            <constraint firstItem="45Z-eZ-LC9" firstAttribute="top" secondItem="4nK-ul-EpG" secondAttribute="bottom" constant="11" id="hQd-ER-bBK"/>
                             <constraint firstItem="O1R-Pn-qhK" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="jad-1X-OyN"/>
                             <constraint firstItem="wzq-2i-yTJ" firstAttribute="trailing" secondItem="VYC-tj-XMN" secondAttribute="trailing" constant="8" id="uVU-KC-XW2"/>
                             <constraint firstItem="j7y-mr-79i" firstAttribute="leading" secondItem="wzq-2i-yTJ" secondAttribute="leading" constant="8" id="zXa-1H-VQl"/>
@@ -198,6 +217,7 @@
                         <outlet property="blueOff" destination="j7y-mr-79i" id="yZw-Ee-1CS"/>
                         <outlet property="blueOn" destination="VYC-tj-XMN" id="AWO-2Y-2r7"/>
                         <outlet property="labb" destination="O1R-Pn-qhK" id="YFj-MC-pnS"/>
+                        <outlet property="pickerView" destination="45Z-eZ-LC9" id="Wkb-fe-rzX"/>
                         <outlet property="syncButton" destination="pwj-bM-iPi" id="Rrg-ew-AWF"/>
                     </connections>
                 </viewController>

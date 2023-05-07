@@ -12,9 +12,26 @@ import Foundation
 import SPIndicator
 
 var managerBLE: CBCentralManager?
-
-class BluetoothDeList: UIViewController {
-
+var arr = Array<String>()
+class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       
+        return 1;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //labb.text = ""+arr.count.description
+        return arr.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        //
+      //  labb.text = arr[row]
+        return arr[row]
+    }
+    
+   
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     @IBOutlet weak var labb: UILabel!
     @IBOutlet weak var syncButton: UIButton!
     @IBOutlet weak var blueOff: UIButton!
@@ -24,8 +41,13 @@ class BluetoothDeList: UIViewController {
         //MyToast.show(message: "Hello, Toast!", controller: self)
         // Do any additional setup after loading the view.
         
-        
-        
+        pickerView.dataSource = self
+                
+        pickerView.delegate = self
+                  
+                for i in 0..<21{
+                    arr.insert("item "+(i+1).description, at: i)
+                }
     }
     
     
@@ -436,3 +458,21 @@ class BluetoothDeList: UIViewController {
 }
 
 
+extension ViewController : UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+      
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arr.count
+    }
+      
+}
+  
+  
+extension ViewController : UIPickerViewDelegate{
+      
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arr[row]
+    }
+}
