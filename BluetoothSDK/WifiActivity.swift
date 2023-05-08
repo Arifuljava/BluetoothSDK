@@ -6,24 +6,168 @@
 //
 
 import UIKit
+import SystemConfiguration.CaptiveNetwork
+import Foundation
+import Bluejay
+import GoogleUtilities_Reachability
+import UIKit
+import CoreBluetooth
+import CoreBluetooth
+import SwiftUI
+import SystemConfiguration
+import Reachability
+import GoogleUtilities_Reachability
+import SPIndicator
+import SystemConfiguration.CaptiveNetwork
+
+
+
 
 class WifiActivity: UIViewController {
 
+    @IBOutlet weak var wifiONN: UIButton!
+    @IBOutlet weak var wifiOfff: UIButton!
+    @IBOutlet weak var wifisyncc: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getAllname() ->String?{
+        var ssid: String?
+                if let interfaces = CNCopySupportedInterfaces() as NSArray? {
+                    for interface in interfaces {
+                        if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
+                            ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                            break
+                        }
+                    }
+                }
+                return ssid
+        
+        
     }
-    */
+    func getAllWiFiNameList() -> String? {
+                var ssid: String?
+                if let interfaces = CNCopySupportedInterfaces() as NSArray? {
+                for interface in interfaces {
+                if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
+                            ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                            break
+                        }
+                    }
+                }
+                return ssid
+            }
+    @IBAction func aysncWifi(_ sender: UIButton) {
+        if fetchSSIDInfo() != nil
+        {
+            SPIndicator.present(title: "Already wifi is open."+"Please sync for wifi channels", message: "Wifi Status", preset: .done, from: .bottom)
+            let alert = UIAlertController(title: "Sync Wifi Channels", message: "wifi is stable now. you can sync wifi channels. Are you want to sync wifi channels?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    let ssid = self.getAllWiFiNameList();
+                    print(ssid)
+                    
+                    print("default")
+                    
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        else
+        {
+            let wifiNotifcation = UIAlertController(title: "Please Connect to Wi-Fi", message: "Please connect to your standard Wi-Fi Network", preferredStyle: .alert)
+            wifiNotifcation.addAction(UIAlertAction(title: "Open Wi-Fi", style: .default, handler: { (nil) in
+                 let url = URL(string: "App-Prefs:root=WIFI")
 
+                 if UIApplication.shared.canOpenURL(url!){
+                       UIApplication.shared.openURL(url!)
+                       self.navigationController?.popViewController(animated: false)
+                 }
+            }))
+            self.present(wifiNotifcation, animated: true, completion: nil)
+            
+            SPIndicator.present(title: "Pldase turn on wifi"+". Please check wifi again.", message: "Wifi Status", preset: .done, from: .bottom)
+        }
+        
+        
+    }
+    @IBAction func wifiON(_ sender: UIButton) {
+        let info = self.getAllname();
+        print(info)
+       
+        if fetchSSIDInfo() != nil
+        {
+            SPIndicator.present(title: "Already wifi is open.", message: "Wifi Status", preset: .done, from: .bottom)
+        }
+        else
+        {
+            let wifiNotifcation = UIAlertController(title: "Please Connect to Wi-Fi", message: "Please connect to your standard Wi-Fi Network", preferredStyle: .alert)
+            wifiNotifcation.addAction(UIAlertAction(title: "Open Wi-Fi", style: .default, handler: { (nil) in
+                 let url = URL(string: "App-Prefs:root=WIFI")
+
+                 if UIApplication.shared.canOpenURL(url!){
+                       UIApplication.shared.openURL(url!)
+                       self.navigationController?.popViewController(animated: false)
+                 }
+            }))
+            self.present(wifiNotifcation, animated: true, completion: nil)
+            
+            SPIndicator.present(title: "Pldase turn on wifi"+". Please check wifi again.", message: "Wifi Status", preset: .done, from: .bottom)
+        }
+        
+    }
+    
+    @IBAction func wifiOf(_ sender: UIButton) {
+        if fetchSSIDInfo() != nil
+        {
+            SPIndicator.present(title: "Already wifi is open.", message: "Wifi Status", preset: .done, from: .bottom)
+        }
+        else
+        {
+            let wifiNotifcation = UIAlertController(title: "Please Connect to Wi-Fi", message: "Please connect to your standard Wi-Fi Network", preferredStyle: .alert)
+            wifiNotifcation.addAction(UIAlertAction(title: "Open Wi-Fi", style: .default, handler: { (nil) in
+                 let url = URL(string: "App-Prefs:root=WIFI")
+
+                 if UIApplication.shared.canOpenURL(url!){
+                       UIApplication.shared.openURL(url!)
+                       self.navigationController?.popViewController(animated: false)
+                 }
+            }))
+            self.present(wifiNotifcation, animated: true, completion: nil)
+            
+            SPIndicator.present(title: "Pldase turn on wifi"+". Please check wifi again.", message: "Wifi Status", preset: .done, from: .bottom)
+        }
+        
+    }
 }

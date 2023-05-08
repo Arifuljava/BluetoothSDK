@@ -407,6 +407,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="wifiON:" destination="rmV-vb-O0V" eventType="touchDown" id="7d0-g9-O8w"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8a-W8-U2f">
                                                 <rect key="frame" x="8" y="154" width="398" height="40"/>
@@ -423,6 +426,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="wifiOf:" destination="rmV-vb-O0V" eventType="touchDown" id="QCj-9c-qOV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5i-Fk-azf">
                                                 <rect key="frame" x="8" y="206" width="398" height="40"/>
@@ -439,6 +445,9 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="aysncWifi:" destination="rmV-vb-O0V" eventType="touchUpInside" id="8vD-m5-qN6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -483,6 +492,11 @@
                             <constraint firstAttribute="bottom" secondItem="jmv-We-M3N" secondAttribute="bottom" id="wC8-8g-8sn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wifiONN" destination="MmP-qI-uN9" id="uCa-gm-4Ea"/>
+                        <outlet property="wifiOfff" destination="X8a-W8-U2f" id="9Mj-CN-gdl"/>
+                        <outlet property="wifisyncc" destination="B5i-Fk-azf" id="0ob-yx-LEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBw-ZX-gDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,7 +511,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloud Printing Section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-z0-6YP">
-                                <rect key="frame" x="8" y="67" width="398" height="22"/>
+                                <rect key="frame" x="8" y="67" width="398" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X61-pg-Ahr"/>
                                 </constraints>
