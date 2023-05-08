@@ -13,7 +13,42 @@ import SystemConfiguration
 import Reachability
 import GoogleUtilities_Reachability
 import SPIndicator
+import SystemConfiguration.CaptiveNetwork
 
+func fetchSSIDInfo() ->  String {
+    var currentSSID = ""
+    if let interfaces:CFArray = CNCopySupportedInterfaces() {
+        for i in 0..<CFArrayGetCount(interfaces){
+            let interfaceName: UnsafeRawPointer = CFArrayGetValueAtIndex(interfaces, i)
+            let rec = unsafeBitCast(interfaceName, to: AnyObject.self)
+            let unsafeInterfaceData = CNCopyCurrentNetworkInfo("\(rec)" as CFString)
+            if unsafeInterfaceData != nil {
+                let interfaceData = unsafeInterfaceData! as Dictionary?
+                for dictData in interfaceData! {
+                    if dictData.key as! String == "SSID" {
+                        currentSSID = dictData.value as! String
+                    }
+                }
+            }
+        }
+    }
+    return currentSSID
+}
+func isWifiEnabled() -> Bool {
+
+        var hasWiFiNetwork: Bool = false
+        let interfaces: NSArray = CFBridgingRetain(CNCopySupportedInterfaces()) as! NSArray
+
+        for interface  in interfaces {
+           // let networkInfo = (CFBridgingRetain(CNCopyCurrentNetworkInfo(((interface) as! CFString))) as! NSDictionary)
+            let networkInfo: [AnyHashable: Any]? = CFBridgingRetain(CNCopyCurrentNetworkInfo(((interface) as! CFString))) as? [AnyHashable : Any]
+            if (networkInfo != nil) {
+                hasWiFiNetwork = true
+                break
+            }
+        }
+        return hasWiFiNetwork;
+    }
 
 
 class BluetoothViewModel: NSObject, ObservableObject {
@@ -53,6 +88,7 @@ class PrinterCategories: UIViewController {
       
         // Do any additional setup after loading the view.
     }
+    
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
 
             var statusMessage = ""
@@ -275,9 +311,28 @@ class PrinterCategories: UIViewController {
     
 
     @IBAction func wifi(_ sender: UIButton) {
+        if fetchSSIDInfo() != nil {
+            /* Wi-Fi is Connected */
+            let sec = storyboard?.instantiateViewController(identifier: "wifii") as! WifiActivity
+                        present(sec,animated: true)
+            
+        }
+        else{
+            let wifiNotifcation = UIAlertController(title: "Please Connect to Wi-Fi", message: "Please connect to your standard Wi-Fi Network", preferredStyle: .alert)
+            wifiNotifcation.addAction(UIAlertAction(title: "Open Wi-Fi", style: .default, handler: { (nil) in
+                 let url = URL(string: "App-Prefs:root=WIFI")
+
+                 if UIApplication.shared.canOpenURL(url!){
+                       UIApplication.shared.openURL(url!)
+                       self.navigationController?.popViewController(animated: false)
+                 }
+            }))
+            self.present(wifiNotifcation, animated: true, completion: nil)
+            
+            SPIndicator.present(title: "Pldase turn on wifi"+". Please check wifi again.", message: "Wifi Status", preset: .done, from: .bottom)
+        }
        
-        let sec = storyboard?.instantiateViewController(identifier: "wifii") as! WifiActivity
-                    present(sec,animated: true)
+       
         
     }
     

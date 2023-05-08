@@ -10,11 +10,18 @@ import CoreBluetooth
 import CoreBluetooth
 import Foundation
 import SPIndicator
+import Bluejay
 
 
+
+
+var peripherals:[CBPeripheral] = []
+var centralManager: CBCentralManager!
 var managerBLE: CBCentralManager?
 var arr = Array<String>()
 class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        
         return 1;
@@ -29,8 +36,7 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
       //  labb.text = arr[row]
         return arr[row]
     }
-    
-    
+ 
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var labb: UILabel!
@@ -49,9 +55,49 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                 for i in 0..<21{
                     arr.insert("item "+(i+1).description, at: i)
                 }
+        
+        
+        //
+        let datata=UITapGestureRecognizer(target: self, action: #selector(mydate(sender:)))
+                pickerView.isUserInteractionEnabled = true
+        pickerView.addGestureRecognizer(datata)
+       // centralManager = CBCentralManager(delegate: self, queue: .main)
+        let bluejay = Bluejay()
+        bluejay.start()
     }
     
-    
+    @objc func mydate(sender : UITapGestureRecognizer)
+       {
+           let bluejay = Bluejay()
+           bluejay.start()
+           
+           let heartRateService = ServiceIdentifier(uuid: "180D")
+           let bodySensorLocation = CharacteristicIdentifier(uuid: "2A38", service: heartRateService)
+           let heartRate = CharacteristicIdentifier(uuid: "2A37", service: heartRateService)
+           
+           bluejay.scan(
+               serviceIdentifiers: [heartRateService],
+               discovery: { [weak self] (discovery, discoveries) -> ScanAction in
+                   guard let weakSelf = self else {
+                       return .stop
+                   }
+
+                   //weakSelf.discoveries = discoveries
+                   //weakSelf.tableView.reloadData()
+                   SPIndicator.present(title: "Devices : "+discoveries.description, message: "Bluetooth Status", preset: .done, from: .bottom)
+
+                   return .continue
+               },
+               stopped: { (discoveries, error) in
+                   if let error = error {
+                       debugPrint("Scan stopped with error: \(error.localizedDescription)")
+                   }
+                   else {
+                       debugPrint("Scan stopped without error.")
+                   }
+           })
+           
+       }
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager!) {
 
             var statusMessage = ""
@@ -150,11 +196,19 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                    switch action.style{
                        case .default:
-                       let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
-                       let app = UIApplication.shared
-                       app.openURL(url!)
+                      
                        print("default")
+                       SPIndicator.present(title: "Bluetooth devices scan is started", message: "Bluetooth Scan", preset: .done, from: .bottom)
                        
+                           //let options: [String: Any] = [CBCentralManagerScanOptionAllowDuplicatesKey:NSNumber(value: false)]
+                           centralManager?.scanForPeripherals(withServices: nil, options: nil)
+                           DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
+                             //self.centralManager.stopScan()
+                             print("Scanning stop")
+                           }
+                       
+                       
+                       print("Start")
                       
                        case .cancel:
                        
@@ -477,3 +531,6 @@ extension ViewController : UIPickerViewDelegate{
         return arr[row]
     }
 }
+
+
+
