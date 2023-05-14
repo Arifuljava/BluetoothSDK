@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     @IBAction func mygonext(_ sender: UIButton) {
         SPIndicator.present(title: "Initilize Successfully", message: "bluetooth SDk successfully initilized successfully done.", preset: .done, from: .bottom)
     
-        let sec = storyboard?.instantiateViewController(identifier: "printers") as! PrinterCategories
+        let sec = storyboard?.instantiateViewController(identifier: "bluelist") as! BluetoothListActivity
                     present(sec,animated: true)
         
         

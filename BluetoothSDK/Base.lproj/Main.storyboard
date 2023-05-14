@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="-10" y="742"/>
         </scene>
-        <!--View Controller-->
+        <!--Wifi List Activity-->
         <scene sceneID="IUX-gn-BUg">
             <objects>
-                <viewController id="Tfw-Dv-k7m" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wifilist" id="Tfw-Dv-k7m" customClass="WifiListActivity" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7y-t7-LDm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,6 +556,7 @@
                         <outlet property="pickerView" destination="OwD-mz-Slb" id="dT1-w5-8qs"/>
                         <outlet property="wifiONN" destination="MmP-qI-uN9" id="uCa-gm-4Ea"/>
                         <outlet property="wifiOfff" destination="X8a-W8-U2f" id="9Mj-CN-gdl"/>
+                        <outlet property="wifihint" destination="Ycr-Dl-Pc5" id="Lyc-ej-Zjf"/>
                         <outlet property="wifisyncc" destination="B5i-Fk-azf" id="0ob-yx-LEd"/>
                     </connections>
                 </viewController>
@@ -595,10 +596,10 @@
             </objects>
             <point key="canvasLocation" x="2175.36231884058" y="95.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Bluetooth List Activity-->
         <scene sceneID="PHD-dP-w21">
             <objects>
-                <viewController id="m31-GO-aWB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bluelist" id="m31-GO-aWB" customClass="BluetoothListActivity" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LBD-pE-4Vn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -627,6 +628,9 @@
                             <constraint firstItem="zvr-dg-qUn" firstAttribute="trailing" secondItem="HdG-E4-4JB" secondAttribute="trailing" id="sMe-4j-DR8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="HdG-E4-4JB" id="kwd-MS-XFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0W-r4-3DC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

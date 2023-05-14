@@ -42,6 +42,7 @@ class WifiActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
    
     
 
+    @IBOutlet weak var wifihint: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var wifiONN: UIButton!
     @IBOutlet weak var wifiOfff: UIButton!
@@ -49,6 +50,8 @@ class WifiActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        wifihint.isHidden = true
+        pickerView.isHidden = true
         pickerView.dataSource = self
                 
         pickerView.delegate = self
