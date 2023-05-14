@@ -39,6 +39,8 @@
 		2524D1512A0648C700621D53 /* Bluejay in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D1502A0648C700621D53 /* Bluejay */; };
 		2524D1532A064CE000621D53 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2524D1522A064CE000621D53 /* Testing.swift */; };
 		2524D18F2A06654C00621D53 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D18E2A06654C00621D53 /* Reachability */; };
+		2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */; };
+		2537CEA62A10CB0300C2B3B6 /* BluetoothListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */; };
 		2561CDB32A07626B008025DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB22A07626B008025DD /* Toast */; };
 		2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB82A0766D0008025DD /* SPIndicator */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		2524D1492A061C8B00621D53 /* BluetoothDeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeList.swift; sourceTree = "<group>"; };
 		2524D14D2A063C5E00621D53 /* MyToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyToast.swift; sourceTree = "<group>"; };
 		2524D1522A064CE000621D53 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiListActivity.swift; sourceTree = "<group>"; };
+		2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothListActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +160,9 @@
 				2524D1492A061C8B00621D53 /* BluetoothDeList.swift */,
 				2524D1432A06107500621D53 /* WifiActivity.swift */,
 				2524D1452A06108B00621D53 /* CloudActivity.swift */,
+				2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */,
 				2524D1472A06140900621D53 /* BluetoothSecond.swift */,
+				2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */,
 				2524D1412A05FD7700621D53 /* PrinterCategories.swift */,
 				251D36F62A03C79A00F4CD15 /* Main.storyboard */,
 				251D36F92A03C79B00F4CD15 /* Assets.xcassets */,
@@ -348,9 +354,11 @@
 				2524D1482A06140900621D53 /* BluetoothSecond.swift in Sources */,
 				2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */,
 				2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */,
+				2537CEA62A10CB0300C2B3B6 /* BluetoothListActivity.swift in Sources */,
 				2524D1442A06107500621D53 /* WifiActivity.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
 				2524D1532A064CE000621D53 /* Testing.swift in Sources */,
+				2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,
 			);
@@ -590,7 +598,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3K452862FK;
+				DEVELOPMENT_TEAM = V23C68N65J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,7 +623,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3K452862FK;
+				DEVELOPMENT_TEAM = V23C68N65J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -637,9 +645,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3K452862FK;
+				DEVELOPMENT_TEAM = V23C68N65J;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -660,9 +669,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3K452862FK;
+				DEVELOPMENT_TEAM = V23C68N65J;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
