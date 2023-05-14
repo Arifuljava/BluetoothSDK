@@ -449,21 +449,40 @@
                                                     <action selector="aysncWifi:" destination="rmV-vb-O0V" eventType="touchUpInside" id="8vD-m5-qN6"/>
                                                 </connections>
                                             </button>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwD-mz-Slb">
+                                                <rect key="frame" x="0.0" y="346" width="414" height="216"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Wifi " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycr-Dl-Pc5">
+                                                <rect key="frame" x="8" y="257" width="398" height="39"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="39" id="NUV-dS-Dhb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="B5i-Fk-azf" firstAttribute="top" secondItem="X8a-W8-U2f" secondAttribute="bottom" constant="12" id="0K8-9F-9kE"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ycr-Dl-Pc5" secondAttribute="trailing" constant="8" id="5td-gz-04g"/>
                                             <constraint firstAttribute="trailing" secondItem="B5i-Fk-azf" secondAttribute="trailing" constant="8" id="7OI-Io-otQ"/>
                                             <constraint firstItem="MmP-qI-uN9" firstAttribute="leading" secondItem="814-zq-TtJ" secondAttribute="leading" constant="8" id="7qg-46-kGV"/>
                                             <constraint firstItem="X8a-W8-U2f" firstAttribute="top" secondItem="MmP-qI-uN9" secondAttribute="bottom" constant="12" id="9L3-cF-ZU9"/>
+                                            <constraint firstItem="Ycr-Dl-Pc5" firstAttribute="top" secondItem="B5i-Fk-azf" secondAttribute="bottom" constant="11" id="Dj5-5S-z8z"/>
                                             <constraint firstItem="X8a-W8-U2f" firstAttribute="leading" secondItem="814-zq-TtJ" secondAttribute="leading" constant="8" id="FUQ-sL-z5w"/>
                                             <constraint firstItem="MmP-qI-uN9" firstAttribute="top" secondItem="Qvc-At-TgY" secondAttribute="bottom" constant="10" id="JQj-Av-d1e"/>
                                             <constraint firstItem="Qvc-At-TgY" firstAttribute="leading" secondItem="814-zq-TtJ" secondAttribute="leading" constant="8" id="Ni7-Cg-4F7"/>
                                             <constraint firstAttribute="trailing" secondItem="X8a-W8-U2f" secondAttribute="trailing" constant="8" id="Srd-rf-TfT"/>
                                             <constraint firstItem="Qvc-At-TgY" firstAttribute="top" secondItem="814-zq-TtJ" secondAttribute="top" constant="52" id="VKT-Ut-VKL"/>
+                                            <constraint firstItem="Ycr-Dl-Pc5" firstAttribute="leading" secondItem="814-zq-TtJ" secondAttribute="leading" constant="8" id="XJt-Ug-5V4"/>
+                                            <constraint firstAttribute="trailing" secondItem="OwD-mz-Slb" secondAttribute="trailing" id="ahl-L4-fEV"/>
+                                            <constraint firstItem="OwD-mz-Slb" firstAttribute="top" secondItem="B5i-Fk-azf" secondAttribute="bottom" constant="172" id="cc0-1i-3KR"/>
+                                            <constraint firstItem="OwD-mz-Slb" firstAttribute="top" secondItem="B5i-Fk-azf" secondAttribute="bottom" constant="100" id="dtB-jH-X07"/>
                                             <constraint firstAttribute="trailing" secondItem="MmP-qI-uN9" secondAttribute="trailing" constant="8" id="i0c-ti-b9t"/>
                                             <constraint firstItem="B5i-Fk-azf" firstAttribute="leading" secondItem="814-zq-TtJ" secondAttribute="leading" constant="8" id="iW5-CO-Kmg"/>
                                             <constraint firstAttribute="trailing" secondItem="Qvc-At-TgY" secondAttribute="trailing" constant="8" id="oEi-m0-FXc"/>
+                                            <constraint firstItem="OwD-mz-Slb" firstAttribute="leading" secondItem="814-zq-TtJ" secondAttribute="leading" id="va8-gQ-qgK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -493,6 +512,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pickerView" destination="OwD-mz-Slb" id="dT1-w5-8qs"/>
                         <outlet property="wifiONN" destination="MmP-qI-uN9" id="uCa-gm-4Ea"/>
                         <outlet property="wifiOfff" destination="X8a-W8-U2f" id="9Mj-CN-gdl"/>
                         <outlet property="wifisyncc" destination="B5i-Fk-azf" id="0ob-yx-LEd"/>
@@ -511,7 +531,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloud Printing Section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-z0-6YP">
-                                <rect key="frame" x="8" y="67" width="398" height="19.5"/>
+                                <rect key="frame" x="8" y="67" width="398" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X61-pg-Ahr"/>
                                 </constraints>

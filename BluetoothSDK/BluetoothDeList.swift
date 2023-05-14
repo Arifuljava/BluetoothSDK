@@ -82,6 +82,7 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                        return .stop
                    }
 
+                   
                    //weakSelf.discoveries = discoveries
                    //weakSelf.tableView.reloadData()
                    SPIndicator.present(title: "Devices : "+discoveries.description, message: "Bluetooth Status", preset: .done, from: .bottom)

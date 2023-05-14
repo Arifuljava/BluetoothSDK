@@ -21,16 +21,41 @@ import SPIndicator
 import SystemConfiguration.CaptiveNetwork
 
 
+var array = Array<String>()
 
+class WifiActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //labb.text = ""+arr.count.description
+        return arr.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        //
+      //  labb.text = arr[row]
+        return arr[row]
+    }
+    
+   
+    
 
-class WifiActivity: UIViewController {
-
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var wifiONN: UIButton!
     @IBOutlet weak var wifiOfff: UIButton!
     @IBOutlet weak var wifisyncc: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        pickerView.dataSource = self
+                
+        pickerView.delegate = self
+                  
+                for i in 0..<21{
+                    arr.insert("item "+(i+1).description, at: i)
+                }
       
 
         // Do any additional setup after loading the view.
