@@ -42,6 +42,8 @@
 		2524D18F2A06654C00621D53 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 2524D18E2A06654C00621D53 /* Reachability */; };
 		2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */; };
 		2537CEA62A10CB0300C2B3B6 /* BluetoothListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */; };
+		25436EC02A1350290043DB6D /* BluetoothSecondListAllDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */; };
+		25436EC22A1354DC0043DB6D /* MyListBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25436EC12A1354DC0043DB6D /* MyListBlue.swift */; };
 		2561CDB32A07626B008025DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB22A07626B008025DD /* Toast */; };
 		2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB82A0766D0008025DD /* SPIndicator */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,8 @@
 		2524D1522A064CE000621D53 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiListActivity.swift; sourceTree = "<group>"; };
 		2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothListActivity.swift; sourceTree = "<group>"; };
+		25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSecondListAllDe.swift; sourceTree = "<group>"; };
+		25436EC12A1354DC0043DB6D /* MyListBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListBlue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 				2524D1492A061C8B00621D53 /* BluetoothDeList.swift */,
 				2524D1432A06107500621D53 /* WifiActivity.swift */,
 				2524D1452A06108B00621D53 /* CloudActivity.swift */,
+				25436EC12A1354DC0043DB6D /* MyListBlue.swift */,
+				25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */,
 				2516EA432A10E683007C2E2A /* ListWifi.swift */,
 				2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */,
 				2524D1472A06140900621D53 /* BluetoothSecond.swift */,
@@ -358,7 +364,9 @@
 				2524D1422A05FD7700621D53 /* PrinterCategories.swift in Sources */,
 				2524D14A2A061C8B00621D53 /* BluetoothDeList.swift in Sources */,
 				2537CEA62A10CB0300C2B3B6 /* BluetoothListActivity.swift in Sources */,
+				25436EC22A1354DC0043DB6D /* MyListBlue.swift in Sources */,
 				2524D1442A06107500621D53 /* WifiActivity.swift in Sources */,
+				25436EC02A1350290043DB6D /* BluetoothSecondListAllDe.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
 				2524D1532A064CE000621D53 /* Testing.swift in Sources */,
 				2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */,

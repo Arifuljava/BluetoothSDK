@@ -216,6 +216,7 @@
                     <connections>
                         <outlet property="blueOff" destination="j7y-mr-79i" id="yZw-Ee-1CS"/>
                         <outlet property="blueOn" destination="VYC-tj-XMN" id="AWO-2Y-2r7"/>
+                        <outlet property="hintText" destination="4nK-ul-EpG" id="S8r-NK-Y8j"/>
                         <outlet property="labb" destination="O1R-Pn-qhK" id="YFj-MC-pnS"/>
                         <outlet property="pickerView" destination="45Z-eZ-LC9" id="Wkb-fe-rzX"/>
                         <outlet property="syncButton" destination="pwj-bM-iPi" id="Rrg-ew-AWF"/>
@@ -225,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="-10" y="742"/>
         </scene>
-        <!--Wifi List Activity-->
+        <!--Bluetooth Second List All De-->
         <scene sceneID="IUX-gn-BUg">
             <objects>
-                <viewController storyboardIdentifier="wifilist" id="Tfw-Dv-k7m" customClass="WifiListActivity" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wifilist" id="Tfw-Dv-k7m" customClass="BluetoothSecondListAllDe" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7y-t7-LDm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,6 +367,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a82-U4-QCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2224.6376811594205" y="741.96428571428567"/>
+        </scene>
+        <!--My List Blue-->
+        <scene sceneID="9fb-wk-r0x">
+            <objects>
+                <viewController storyboardIdentifier="mmmu" id="2M4-fm-fOd" customClass="MyListBlue" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Ic-oN-AkH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eJz-ii-m5G">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="3K5-0f-Lx4">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3K5-0f-Lx4" id="1ue-zf-72S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s8n-8P-7TP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eJz-ii-m5G" firstAttribute="top" secondItem="s8n-8P-7TP" secondAttribute="top" id="5wk-Cy-nba"/>
+                            <constraint firstItem="s8n-8P-7TP" firstAttribute="bottom" secondItem="eJz-ii-m5G" secondAttribute="bottom" id="M1o-gg-Gob"/>
+                            <constraint firstItem="eJz-ii-m5G" firstAttribute="top" secondItem="s8n-8P-7TP" secondAttribute="top" id="NQH-Hf-QvX"/>
+                            <constraint firstItem="s8n-8P-7TP" firstAttribute="trailing" secondItem="eJz-ii-m5G" secondAttribute="trailing" id="a8q-y7-sN0"/>
+                            <constraint firstItem="eJz-ii-m5G" firstAttribute="leading" secondItem="s8n-8P-7TP" secondAttribute="leading" id="de0-d6-VtH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="eJz-ii-m5G" id="PUQ-dS-Y81"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngI-Ae-C7j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2959" y="742"/>
         </scene>
         <!--Printer Categories-->
         <scene sceneID="4cz-Ee-XgU">
@@ -674,7 +716,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloud Printing Section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejk-z0-6YP">
-                                <rect key="frame" x="8" y="67" width="398" height="22"/>
+                                <rect key="frame" x="8" y="67" width="398" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X61-pg-Ahr"/>
                                 </constraints>

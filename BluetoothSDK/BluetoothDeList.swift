@@ -11,8 +11,7 @@ import CoreBluetooth
 import Foundation
 import SPIndicator
 import Bluejay
-
-
+import Bluejay
 
 
 var peripherals:[CBPeripheral] = []
@@ -238,6 +237,7 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
       var cbcm: CBCentralManager!;
     
+    @IBOutlet weak var hintText: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var labb: UILabel!
@@ -248,6 +248,9 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         super.viewDidLoad()
         //MyToast.show(message: "Hello, Toast!", controller: self)
         // Do any additional setup after loading the view.
+        hintText.isHidden = true
+        pickerView.isHidden = true
+        
         
         pickerView.dataSource = self
                 
@@ -366,19 +369,61 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         }
     
     @IBAction func clicksync(_ sender: UIButton) {
-        
-        if(flag==1)
-         {
-            var    statusMessage = "Bluetooth Status: Alreay On. You can sync bluetooth devices "
-              SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
-            
-            
-            //
+        /*
+         let bluejay = Bluejay()
+         bluejay.start()
+         let heartRateService = ServiceIdentifier(uuid: "180D")
+         let bodySensorLocation = CharacteristicIdentifier(uuid: "2A38", service: heartRateService)
+         let heartRate = CharacteristicIdentifier(uuid: "2A37", service: heartRateService)
+         
+         bluejay.scan(
+             duration: 15,
+             allowDuplicates: true,
+             serviceIdentifiers: nil,
+             discovery: { [weak self] (discovery, discoveries) -> ScanAction in
+                 guard let weakSelf = self else {
+                     return .stop
+                 }
+
+                
+
+                 return .continue
+             },
+             expired: { [weak self] (lostDiscovery, discoveries) -> ScanAction in
+                 guard let weakSelf = self else {
+                     return .stop
+                 }
+
+                 print("Lost discovery: \(lostDiscovery)")
+
+               
+
+                 return .continue
+         }) { (discoveries, error) in
+                 if let error = error {
+                     debugPrint("Scan stopped with error: \(error.localizedDescription)")
+                 }
+                 else {
+                     debugPrint("Scan stopped without error.")
+                 }
+         }
+         */
+    
+       if(flag==1)
+        {
+           
+
+      
             let alert = UIAlertController(title: "Bluetooth Devices Sync", message: "Are you want to sync bluetooth devices?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                 switch action.style{
                     case .default:
-                  
+                    var    statusMessage = "Bluetooth Status: Alreay On. You can sync bluetooth devices "
+                      SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+                    
+                    let sec1 = self.storyboard?.instantiateViewController(identifier: "mmmu") as! MyListBlue
+                    self.present(sec1,animated: true)
+                    
                     print("default")
                     
                    
@@ -409,50 +454,52 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                 }
             }))
             self.present(alert, animated: true, completion: nil)
-        
-        }
-         else{
-           var    statusMessage = "Bluetooth Status: Turned Off , please turn on bluetooth."
-             SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
-             let alert = UIAlertController(title: "Bluetooth On", message: "Are you want to turn On bluetooth?", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                 switch action.style{
-                     case .default:
-                     let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
-                     let app = UIApplication.shared
-                     app.openURL(url!)
-                     print("default")
-                     
+       
+       
+       }
+        else{
+          var    statusMessage = "Bluetooth Status: Turned Off , please turn on bluetooth."
+            SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
+            let alert = UIAlertController(title: "Bluetooth On", message: "Are you want to turn On bluetooth?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                    let app = UIApplication.shared
+                    app.openURL(url!)
+                    print("default")
                     
-                     case .cancel:
-                     
-                     print("cancel")
-                     
-                     
-                     case .destructive:
-                     
-                     print("destructive")
-                     
-                     
-                 }
-             }))
-             alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
-                 switch action.style{
-                     case .default:
-                     print("default")
-                     
-                     
-                     case .cancel:
-                     print("cancel")
-                     
-                     case .destructive:
-                     print("destructive")
-                     
-                 }
-             }))
-             self.present(alert, animated: true, completion: nil)
-             
-         }
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+      
         
     }
     @IBAction func clickOFF(_ sender: UIButton) {
