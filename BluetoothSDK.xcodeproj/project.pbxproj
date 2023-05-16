@@ -548,6 +548,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BluetoothSDK/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BluetoothSDK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Please allow bluetooth access.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Please allow bluetooth accss.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -577,6 +580,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BluetoothSDK/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BluetoothSDK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Please allow bluetooth access.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Please allow bluetooth accss.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
