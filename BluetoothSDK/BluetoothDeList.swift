@@ -19,7 +19,206 @@ var peripherals:[CBPeripheral] = []
 var centralManager: CBCentralManager!
 var managerBLE: CBCentralManager?
 var arr = Array<String>()
-class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        var statusMessage = ""
+        //TestView.text  = "clicked"
+        switch central.state {
+        case .poweredOn:
+            statusMessage = "Bluetooth Status: Turned On"
+            flag = 1
+            
+            SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+            
+            //TestView.text = statusMessage
+            //labeltext.text = statusMessage
+            
+
+        case .poweredOff:
+            flag = 2
+            statusMessage = "Bluetooth Status: Turned Off"
+            SPIndicator.present(title: ""+statusMessage+" Please open bluetooth. ", message: "Bluetooth Status", preset: .done, from: .bottom)
+            //TestView.text = statusMessage
+           // labeltext.text = statusMessage
+            let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is off. Please enable/ON  bluetooth.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                        let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                        let app = UIApplication.shared
+                        app.openURL(url!)
+                    print("default")
+                    
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+
+        case .resetting:
+            statusMessage = "Bluetooth Status: Resetting"
+            //TestView.text = statusMessage
+            //labeltext.text = statusMessage
+            SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+        case .unauthorized:
+            statusMessage = "Bluetooth Status: Not Authorized"
+            //TestView.text = statusMessage
+            //labeltext.text = statusMessage
+            SPIndicator.present(title: ""+statusMessage+". Please check bluetooth again.", message: "Bluetooth Status", preset: .done, from: .bottom)
+            let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is not authorized. Please check bluetooth again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                        let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                        let app = UIApplication.shared
+                        app.openURL(url!)
+                    print("default")
+                    
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+
+        case .unsupported:
+            statusMessage = "Bluetooth Status: Not Supported"
+            //TestView.text = statusMessage
+           // labeltext.text = statusMessage
+            SPIndicator.present(title: ""+statusMessage+". Please check bluetooth again.", message: "Bluetooth Status", preset: .done, from: .bottom)
+            let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth is not supported. Please check bluetooth again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                        let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                        let app = UIApplication.shared
+                        app.openURL(url!)
+                    print("default")
+                    
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+
+        case .unknown:
+            
+            statusMessage = "Bluetooth Status: Unknown"
+            SPIndicator.present(title: ""+statusMessage+". Please check bluetooth again.", message: "Bluetooth Status", preset: .done, from: .bottom)
+           /// TestView.text = statusMessage
+            let alert = UIAlertController(title: "Bluetooth Status", message: "Bluetooth status is unknown. Please check bluetooth again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                    let app = UIApplication.shared
+                    app.openURL(url!)
+                    print("default")
+                    
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            //labeltext.text = statusMessage///
+        }
+
+        print(statusMessage)
+    }
+    
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -36,7 +235,9 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
       //  labb.text = arr[row]
         return arr[row]
     }
- 
+    
+      var cbcm: CBCentralManager!;
+    
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var labb: UILabel!
@@ -55,6 +256,10 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                 for i in 0..<21{
                     arr.insert("item "+(i+1).description, at: i)
                 }
+        cbcm = CBCentralManager();
+        cbcm = CBCentralManager.init()
+        self.cbcm = CBCentralManager(delegate: self, queue: nil)
+        
         
         
         //
@@ -162,25 +367,194 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     @IBAction func clicksync(_ sender: UIButton) {
         
-        var cmc: CBPeripheralManager!
-                    cmc = CBPeripheralManager.init()
+        if(flag==1)
+         {
+            var    statusMessage = "Bluetooth Status: Alreay On. You can sync bluetooth devices "
+              SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+            
+            
+            //
+            let alert = UIAlertController(title: "Bluetooth Devices Sync", message: "Are you want to sync bluetooth devices?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                  
+                    print("default")
                     
-        peripheralManagerDidUpdateStateBlueayncDevices(peripheral: cmc)
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+        
+        }
+         else{
+           var    statusMessage = "Bluetooth Status: Turned Off , please turn on bluetooth."
+             SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
+             let alert = UIAlertController(title: "Bluetooth On", message: "Are you want to turn On bluetooth?", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                 switch action.style{
+                     case .default:
+                     let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                     let app = UIApplication.shared
+                     app.openURL(url!)
+                     print("default")
+                     
+                    
+                     case .cancel:
+                     
+                     print("cancel")
+                     
+                     
+                     case .destructive:
+                     
+                     print("destructive")
+                     
+                     
+                 }
+             }))
+             alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                 switch action.style{
+                     case .default:
+                     print("default")
+                     
+                     
+                     case .cancel:
+                     print("cancel")
+                     
+                     case .destructive:
+                     print("destructive")
+                     
+                 }
+             }))
+             self.present(alert, animated: true, completion: nil)
+             
+         }
         
     }
     @IBAction func clickOFF(_ sender: UIButton) {
-        var cmc: CBPeripheralManager!
-                    cmc = CBPeripheralManager.init()
-                    
-        peripheralManagerDidUpdateStateBlueOff(peripheral: cmc)
+       if(flag==2)
+        {
+           var    statusMessage = "Bluetooth Status: Turned Off , please turn on bluetooth."
+             SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
+       }
+        else if(flag==1)
+        {
+            var    statusMessage = "Bluetooth Status: Turned On. Do you want to turn off bluetooth."
+              SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
+              let alert = UIAlertController(title: "Bluetooth On", message: "Are you want to turn On bluetooth?", preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                  switch action.style{
+                      case .default:
+                      let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                      let app = UIApplication.shared
+                      app.openURL(url!)
+                      print("default")
+                      
+                     
+                      case .cancel:
+                      
+                      print("cancel")
+                      
+                      
+                      case .destructive:
+                      
+                      print("destructive")
+                      
+                      
+                  }
+              }))
+              alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                  switch action.style{
+                      case .default:
+                      print("default")
+                      
+                      
+                      case .cancel:
+                      print("cancel")
+                      
+                      case .destructive:
+                      print("destructive")
+                      
+                  }
+              }))
+              self.present(alert, animated: true, completion: nil)
+        }
         
     }
     @IBAction func clickblueOn(_ sender: UIButton) {
         
-        var cmc: CBPeripheralManager!
-                    cmc = CBPeripheralManager.init()
+       if(flag==1)
+        {
+           var    statusMessage = "Bluetooth Status: Alreay On. "
+             SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+       
+       }
+        else{
+          var    statusMessage = "Bluetooth Status: Turned Off , please turn on bluetooth."
+            SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
+            let alert = UIAlertController(title: "Bluetooth On", message: "Are you want to turn On bluetooth?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    let url = URL(string: "App-Prefs:root=Bluetooth") //for bluetooth setting
+                    let app = UIApplication.shared
+                    app.openURL(url!)
+                    print("default")
                     
-        peripheralManagerDidUpdateStateBlueon(peripheral: cmc)
+                   
+                    case .cancel:
+                    
+                    print("cancel")
+                    
+                    
+                    case .destructive:
+                    
+                    print("destructive")
+                    
+                    
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+                switch action.style{
+                    case .default:
+                    print("default")
+                    
+                    
+                    case .cancel:
+                    print("cancel")
+                    
+                    case .destructive:
+                    print("destructive")
+                    
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
        
         
     }
@@ -202,7 +576,7 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                        SPIndicator.present(title: "Bluetooth devices scan is started", message: "Bluetooth Scan", preset: .done, from: .bottom)
                        
                            //let options: [String: Any] = [CBCentralManagerScanOptionAllowDuplicatesKey:NSNumber(value: false)]
-                           centralManager?.scanForPeripherals(withServices: nil, options: nil)
+                           ///cbcm?.scanForPeripherals(withServices: nil, options: nil)
                            DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
                              //self.centralManager.stopScan()
                              print("Scanning stop")
@@ -238,7 +612,8 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                        
                    }
                }))
-               self.present(alert, animated: true, completion: nil)           case .poweredOff:
+               self.present(alert, animated: true, completion: nil)
+           case .poweredOff:
                statusMessage = "Bluetooth Status: Turned Off , please turn on bluetooth."
                SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .error, from: .bottom)
                let alert = UIAlertController(title: "Bluetooth On", message: "Are you want to turn On bluetooth?", preferredStyle: .alert)
