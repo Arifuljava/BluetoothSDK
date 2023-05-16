@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2502E9382A1385A90098F5FE /* HRMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502E9372A1385A90098F5FE /* HRMViewController.swift */; };
+		2502E93A2A1386C50098F5FE /* HRMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502E9392A1386C50098F5FE /* HRMConstants.swift */; };
 		2516EA442A10E683007C2E2A /* ListWifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516EA432A10E683007C2E2A /* ListWifi.swift */; };
 		251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D36F02A03C79A00F4CD15 /* AppDelegate.swift */; };
 		251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D36F22A03C79A00F4CD15 /* SceneDelegate.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2502E9372A1385A90098F5FE /* HRMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMViewController.swift; sourceTree = "<group>"; };
+		2502E9392A1386C50098F5FE /* HRMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMConstants.swift; sourceTree = "<group>"; };
 		2516EA432A10E683007C2E2A /* ListWifi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWifi.swift; sourceTree = "<group>"; };
 		251D36ED2A03C79A00F4CD15 /* BluetoothSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		251D36F02A03C79A00F4CD15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +173,9 @@
 				25436EC12A1354DC0043DB6D /* MyListBlue.swift */,
 				25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */,
 				2516EA432A10E683007C2E2A /* ListWifi.swift */,
+				2502E9372A1385A90098F5FE /* HRMViewController.swift */,
 				2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */,
+				2502E9392A1386C50098F5FE /* HRMConstants.swift */,
 				2524D1472A06140900621D53 /* BluetoothSecond.swift */,
 				2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */,
 				2524D1412A05FD7700621D53 /* PrinterCategories.swift */,
@@ -366,10 +372,12 @@
 				2537CEA62A10CB0300C2B3B6 /* BluetoothListActivity.swift in Sources */,
 				25436EC22A1354DC0043DB6D /* MyListBlue.swift in Sources */,
 				2524D1442A06107500621D53 /* WifiActivity.swift in Sources */,
+				2502E9382A1385A90098F5FE /* HRMViewController.swift in Sources */,
 				25436EC02A1350290043DB6D /* BluetoothSecondListAllDe.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
 				2524D1532A064CE000621D53 /* Testing.swift in Sources */,
 				2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */,
+				2502E93A2A1386C50098F5FE /* HRMConstants.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,
 				2516EA442A10E683007C2E2A /* ListWifi.swift in Sources */,
