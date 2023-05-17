@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2502E9382A1385A90098F5FE /* HRMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502E9372A1385A90098F5FE /* HRMViewController.swift */; };
 		2502E93A2A1386C50098F5FE /* HRMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502E9392A1386C50098F5FE /* HRMConstants.swift */; };
-		2502E93E2A13929F0098F5FE /* Printer in Frameworks */ = {isa = PBXBuildFile; productRef = 2502E93D2A13929F0098F5FE /* Printer */; };
 		2516EA442A10E683007C2E2A /* ListWifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516EA432A10E683007C2E2A /* ListWifi.swift */; };
 		251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D36F02A03C79A00F4CD15 /* AppDelegate.swift */; };
 		251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D36F22A03C79A00F4CD15 /* SceneDelegate.swift */; };
@@ -50,6 +49,7 @@
 		2561CDB32A07626B008025DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB22A07626B008025DD /* Toast */; };
 		2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB82A0766D0008025DD /* SPIndicator */; };
 		2572405F2A14734700736DA4 /* TestPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572405E2A14734700736DA4 /* TestPrint.swift */; };
+		257240652A14DA5500736DA4 /* Printer in Frameworks */ = {isa = PBXBuildFile; productRef = 257240642A14DA5500736DA4 /* Printer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +115,7 @@
 				2524D12E2A05F46300621D53 /* FirebaseCrashlytics in Frameworks */,
 				2524D1262A05F46300621D53 /* FirebaseAnalytics in Frameworks */,
 				2524D1342A05F46300621D53 /* FirebaseFirestore in Frameworks */,
-				2502E93E2A13929F0098F5FE /* Printer in Frameworks */,
+				257240652A14DA5500736DA4 /* Printer in Frameworks */,
 				2524D18F2A06654C00621D53 /* Reachability in Frameworks */,
 				2524D13E2A05F46300621D53 /* FirebaseStorageSwift-Beta in Frameworks */,
 				2524D1382A05F46300621D53 /* FirebaseMLModelDownloader in Frameworks */,
@@ -245,7 +245,7 @@
 				2524D18E2A06654C00621D53 /* Reachability */,
 				2561CDB22A07626B008025DD /* Toast */,
 				2561CDB82A0766D0008025DD /* SPIndicator */,
-				2502E93D2A13929F0098F5FE /* Printer */,
+				257240642A14DA5500736DA4 /* Printer */,
 			);
 			productName = BluetoothSDK;
 			productReference = 251D36ED2A03C79A00F4CD15 /* BluetoothSDK.app */;
@@ -325,7 +325,7 @@
 				2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */,
 				2561CDB12A07626B008025DD /* XCRemoteSwiftPackageReference "toast-swift" */,
 				2561CDB72A0766D0008025DD /* XCRemoteSwiftPackageReference "SPIndicator" */,
-				2502E93C2A13929F0098F5FE /* XCRemoteSwiftPackageReference "Printer" */,
+				257240632A14DA5500736DA4 /* XCRemoteSwiftPackageReference "Printer" */,
 			);
 			productRefGroup = 251D36EE2A03C79A00F4CD15 /* Products */;
 			projectDirPath = "";
@@ -765,14 +765,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2502E93C2A13929F0098F5FE /* XCRemoteSwiftPackageReference "Printer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/KevinGong2013/Printer.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -813,14 +805,17 @@
 				minimumVersion = 1.6.0;
 			};
 		};
+		257240632A14DA5500736DA4 /* XCRemoteSwiftPackageReference "Printer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KevinGong2013/Printer.git";
+			requirement = {
+				branch = refactor;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2502E93D2A13929F0098F5FE /* Printer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2502E93C2A13929F0098F5FE /* XCRemoteSwiftPackageReference "Printer" */;
-			productName = Printer;
-		};
 		2524D1252A05F46300621D53 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -905,6 +900,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2561CDB72A0766D0008025DD /* XCRemoteSwiftPackageReference "SPIndicator" */;
 			productName = SPIndicator;
+		};
+		257240642A14DA5500736DA4 /* Printer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 257240632A14DA5500736DA4 /* XCRemoteSwiftPackageReference "Printer" */;
+			productName = Printer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
