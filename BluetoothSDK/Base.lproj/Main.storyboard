@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="1496" y="742"/>
         </scene>
-        <!--View Controller-->
+        <!--Test Print-->
         <scene sceneID="I2C-d7-G95">
             <objects>
-                <viewController id="YXF-Ak-Xzw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tesyy" id="YXF-Ak-Xzw" customClass="TestPrint" customModule="BluetoothSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8w-cu-Odd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,15 +327,40 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDj-gF-olt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeM-ce-0cr">
-                                                <rect key="frame" x="8" y="52" width="398" height="61"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeM-ce-0cr">
+                                                <rect key="frame" x="8" y="52" width="398" height="86"/>
+                                                <string key="text">Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfP-9i-sN1">
+                                                <rect key="frame" x="8" y="162" width="398" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="er4-c1-ahK"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="dynamic">
+                                                    <backgroundConfiguration key="background" strokeWidth="4" strokeOutset="4">
+                                                        <color key="backgroundColor" red="0.78039215689999997" green="0.4596559845" blue="0.61569384890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="strokeColor" red="0.47776415649999998" green="1" blue="0.76617920380000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="print:" destination="YXF-Ak-Xzw" eventType="touchDown" id="3Ws-O9-6jB"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="XfP-9i-sN1" firstAttribute="top" secondItem="aeM-ce-0cr" secondAttribute="bottom" constant="24" id="4D1-pz-8z7"/>
+                                            <constraint firstAttribute="trailing" secondItem="aeM-ce-0cr" secondAttribute="trailing" constant="8" id="Gf7-1l-OaV"/>
+                                            <constraint firstAttribute="trailing" secondItem="XfP-9i-sN1" secondAttribute="trailing" constant="8" id="IY2-Xv-9db"/>
+                                            <constraint firstItem="XfP-9i-sN1" firstAttribute="leading" secondItem="XDj-gF-olt" secondAttribute="leading" constant="8" id="Lo1-e8-dvd"/>
+                                            <constraint firstItem="aeM-ce-0cr" firstAttribute="top" secondItem="XDj-gF-olt" secondAttribute="top" constant="52" id="ZAg-G6-7FW"/>
+                                            <constraint firstItem="aeM-ce-0cr" firstAttribute="leading" secondItem="XDj-gF-olt" secondAttribute="leading" constant="8" id="c5Y-Rq-TVM"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -363,6 +388,9 @@
                             <constraint firstItem="19Z-IJ-CdC" firstAttribute="top" secondItem="e8w-cu-Odd" secondAttribute="top" id="gSQ-fN-U0W"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textview" destination="aeM-ce-0cr" id="PGe-iU-NVT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a82-U4-QCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -736,6 +764,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hinttext" destination="Ycr-Dl-Pc5" id="tH0-CD-lFC"/>
                         <outlet property="pickerView" destination="OwD-mz-Slb" id="dT1-w5-8qs"/>
                         <outlet property="wifiONN" destination="MmP-qI-uN9" id="uCa-gm-4Ea"/>
                         <outlet property="wifiOfff" destination="X8a-W8-U2f" id="9Mj-CN-gdl"/>

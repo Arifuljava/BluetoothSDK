@@ -19,6 +19,14 @@ import Reachability
 import GoogleUtilities_Reachability
 import SPIndicator
 import SystemConfiguration.CaptiveNetwork
+import Printer
+/*
+ 
+ let showcontroller = UIPrintInteractionController.shared
+ let printInfo = UIPrintInfo(dictionary: nil)
+ printInfo.outputType = UIPrintInfoOutputType.general
+ */
+
 
 
 var array = Array<String>()
@@ -48,6 +56,7 @@ class WifiActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var wifiOfff: UIButton!
     @IBOutlet weak var wifisyncc: UIButton!
     
+    @IBOutlet weak var hinttext: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         wifihint.isHidden = true
@@ -59,7 +68,9 @@ class WifiActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                 for i in 0..<21{
                     arr.insert("item "+(i+1).description, at: i)
                 }
-      
+        hinttext.isHidden = true
+        pickerView.isHidden = true
+        
 
         // Do any additional setup after loading the view.
     }

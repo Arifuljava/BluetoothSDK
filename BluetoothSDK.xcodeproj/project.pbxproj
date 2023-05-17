@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2502E9382A1385A90098F5FE /* HRMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502E9372A1385A90098F5FE /* HRMViewController.swift */; };
 		2502E93A2A1386C50098F5FE /* HRMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2502E9392A1386C50098F5FE /* HRMConstants.swift */; };
+		2502E93E2A13929F0098F5FE /* Printer in Frameworks */ = {isa = PBXBuildFile; productRef = 2502E93D2A13929F0098F5FE /* Printer */; };
 		2516EA442A10E683007C2E2A /* ListWifi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2516EA432A10E683007C2E2A /* ListWifi.swift */; };
 		251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D36F02A03C79A00F4CD15 /* AppDelegate.swift */; };
 		251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D36F22A03C79A00F4CD15 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		25436EC22A1354DC0043DB6D /* MyListBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25436EC12A1354DC0043DB6D /* MyListBlue.swift */; };
 		2561CDB32A07626B008025DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB22A07626B008025DD /* Toast */; };
 		2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB82A0766D0008025DD /* SPIndicator */; };
+		2572405F2A14734700736DA4 /* TestPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572405E2A14734700736DA4 /* TestPrint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,7 @@
 		2537CEA52A10CB0300C2B3B6 /* BluetoothListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothListActivity.swift; sourceTree = "<group>"; };
 		25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSecondListAllDe.swift; sourceTree = "<group>"; };
 		25436EC12A1354DC0043DB6D /* MyListBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListBlue.swift; sourceTree = "<group>"; };
+		2572405E2A14734700736DA4 /* TestPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPrint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 				2524D12E2A05F46300621D53 /* FirebaseCrashlytics in Frameworks */,
 				2524D1262A05F46300621D53 /* FirebaseAnalytics in Frameworks */,
 				2524D1342A05F46300621D53 /* FirebaseFirestore in Frameworks */,
+				2502E93E2A13929F0098F5FE /* Printer in Frameworks */,
 				2524D18F2A06654C00621D53 /* Reachability in Frameworks */,
 				2524D13E2A05F46300621D53 /* FirebaseStorageSwift-Beta in Frameworks */,
 				2524D1382A05F46300621D53 /* FirebaseMLModelDownloader in Frameworks */,
@@ -173,6 +177,7 @@
 				25436EC12A1354DC0043DB6D /* MyListBlue.swift */,
 				25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */,
 				2516EA432A10E683007C2E2A /* ListWifi.swift */,
+				2572405E2A14734700736DA4 /* TestPrint.swift */,
 				2502E9372A1385A90098F5FE /* HRMViewController.swift */,
 				2537CEA32A10CAF000C2B3B6 /* WifiListActivity.swift */,
 				2502E9392A1386C50098F5FE /* HRMConstants.swift */,
@@ -240,6 +245,7 @@
 				2524D18E2A06654C00621D53 /* Reachability */,
 				2561CDB22A07626B008025DD /* Toast */,
 				2561CDB82A0766D0008025DD /* SPIndicator */,
+				2502E93D2A13929F0098F5FE /* Printer */,
 			);
 			productName = BluetoothSDK;
 			productReference = 251D36ED2A03C79A00F4CD15 /* BluetoothSDK.app */;
@@ -319,6 +325,7 @@
 				2524D18D2A06654B00621D53 /* XCRemoteSwiftPackageReference "Reachability" */,
 				2561CDB12A07626B008025DD /* XCRemoteSwiftPackageReference "toast-swift" */,
 				2561CDB72A0766D0008025DD /* XCRemoteSwiftPackageReference "SPIndicator" */,
+				2502E93C2A13929F0098F5FE /* XCRemoteSwiftPackageReference "Printer" */,
 			);
 			productRefGroup = 251D36EE2A03C79A00F4CD15 /* Products */;
 			projectDirPath = "";
@@ -375,6 +382,7 @@
 				2502E9382A1385A90098F5FE /* HRMViewController.swift in Sources */,
 				25436EC02A1350290043DB6D /* BluetoothSecondListAllDe.swift in Sources */,
 				251D36F52A03C79A00F4CD15 /* ViewController.swift in Sources */,
+				2572405F2A14734700736DA4 /* TestPrint.swift in Sources */,
 				2524D1532A064CE000621D53 /* Testing.swift in Sources */,
 				2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */,
 				2502E93A2A1386C50098F5FE /* HRMConstants.swift in Sources */,
@@ -757,6 +765,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2502E93C2A13929F0098F5FE /* XCRemoteSwiftPackageReference "Printer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KevinGong2013/Printer.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -800,6 +816,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2502E93D2A13929F0098F5FE /* Printer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2502E93C2A13929F0098F5FE /* XCRemoteSwiftPackageReference "Printer" */;
+			productName = Printer;
+		};
 		2524D1252A05F46300621D53 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2524D1242A05F46300621D53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
