@@ -82,14 +82,15 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
                 tableView.reloadData()
             }
             if peripheral.name?.contains("AC695X_1(BLE)") == true {
-                self.manager.stopScan()
+               
 
                         self.peripheral = peripheral
                         self.peripheral.delegate = self
 
                         manager.connect(peripheral, options: nil)
                 
-                        print("My Discovver  discover peripheral", peripheral)
+                        print("My  discover peripheral", peripheral)
+                self.manager.stopScan()
 
                 
                     }
@@ -154,17 +155,21 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
             let peripheral = discoveredPeripherals[indexPath.row]
             cell.textLabel?.text = peripheral.name ?? "Unknown Device"
             cell.detailTextLabel?.text = peripheral.identifier.uuidString
-            if peripheral.name?.contains("AC695X_1(BLE)") == true {
+            /*
+             if peripheral.name?.contains("AC695X_1(BLE)") == true {
 
-                        print("Did discover peripheral", peripheral)
+                         print("Did discover peripheral", peripheral)
 
-                
-                    }
+                 
+                     }
+             */
             
             return cell
         }
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) { //cant call this
-            print("connected to \("AC695X_1(BLE)")")
-            peripheral.discoverServices(nil)
-        }
+    func centralManager(_ central: CBCentralManager,
+        didConnect peripheral: CBPeripheral) {
+            print("connected to : "+peripheral.description)
+
+        peripheral.discoverServices(nil)
+    }
     }
