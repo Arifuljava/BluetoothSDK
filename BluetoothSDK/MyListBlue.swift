@@ -75,7 +75,20 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
     var bluename = "demo"
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
             if central.state == .poweredOn {
-                central.scanForPeripherals(withServices: nil, options: nil)
+                if let peripheral = peripheral {
+                            if peripheral.state == .connected {
+                                // The peripheral is connected
+                                print("Peripheral is connected.")
+                            } else {
+                                // The peripheral is not connected
+                                print("Peripheral is not connected.")
+                                central.scanForPeripherals(withServices: nil, options: nil)
+                            }
+                        } else {
+                            // No peripheral is currently assigned
+                            print("No peripheral assigned.")
+                        }
+                
             } else {
                 print("Bluetooth is not available.")
             }
@@ -95,7 +108,7 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
 
                         manager.connect(peripheral, options: nil)
                
-                
+                connectToPrinter()
                         print("My  discover peripheral", peripheral)
                 self.manager.stopScan()
 
@@ -105,7 +118,14 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
             
             
         }
-        
+    func connectToPrinter() {
+            guard let peripheral = peripheral else {
+                return
+            }
+        manager?.connect(peripheral, options: nil)
+        print("Ready")
+        }
+    
         // MARK: - UITableViewDelegate & UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let peripheral = discoveredPeripherals[indexPath.row]
@@ -183,19 +203,22 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
         }
         // Perform any necessary error handling or recovery steps
     }
+   
     
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-            isMyPeripheralConected = true //when connected change to true
-            peripheral.delegate = self
-            peripheral.discoverServices(nil)
     
-        print("Conn")
-        var statusMessage = "Connected Successfully with this device : "+BEAN_NAME.description
-        SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
-        
-        
-            
-        }
+     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+             isMyPeripheralConected = true //when connected change to true
+             peripheral.delegate = self
+             peripheral.discoverServices(nil)
+     
+         print("Conn")
+         var statusMessage = "Connected Successfully with this device : "+BEAN_NAME.description
+         SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
+         
+         
+             
+         }
+
         
         func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
             isMyPeripheralConected = false //and to falso when disconnected
@@ -203,7 +226,41 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
             SPIndicator.present(title: ""+statusMessage, message: "Connection Status", preset: .error, from: .bottom)
             print("dis")
         }
-   
+    func centralManager(_ central: CBCentralManager, connectionEventDidOccur event: CBConnectionEvent, for peripheral: CBPeripheral) {
+        print("not connect")
+    }
+    /*
+     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+             guard let services = peripheral.services else { return }
+             
+             for service in services {
+               peripheral.discoverCharacteristics(nil, for: service)
+                 print("Discoveri")
+             }
+         }
+     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+             guard let characteristics = service.characteristics else { return }
+             
+             for characteristic in characteristics {
+                 if characteristic.properties.contains(.writeWithoutResponse) {
+                     printerCharacteristic = characteristic
+                     var ttt = "fggfgfg"
+                     guard let data = ttt.data(using: .utf8) else { return }
+                     
+                     peripheral.writeValue(data, for: printerCharacteristic, type: .withoutResponse)
+                     print("print ready")
+                     break
+                 }
+             }
+         }
+     private var printerCharacteristic: CBCharacteristic!
+     func printText(_ text: String) {
+         var ttt = "fggfgfg"
+         guard let data = ttt.data(using: .utf8) else { return }
+         
+         peripheral.writeValue(data, for: printerCharacteristic, type: .withoutResponse)
+     }
+     */
     
     
     /*
