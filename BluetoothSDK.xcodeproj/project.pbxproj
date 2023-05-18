@@ -50,6 +50,7 @@
 		2561CDB92A0766D0008025DD /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 2561CDB82A0766D0008025DD /* SPIndicator */; };
 		2572405F2A14734700736DA4 /* TestPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2572405E2A14734700736DA4 /* TestPrint.swift */; };
 		257240652A14DA5500736DA4 /* Printer in Frameworks */ = {isa = PBXBuildFile; productRef = 257240642A14DA5500736DA4 /* Printer */; };
+		25F230EB2A15EC11006751A0 /* BlueToothListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F230EA2A15EC11006751A0 /* BlueToothListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		25436EBF2A1350290043DB6D /* BluetoothSecondListAllDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSecondListAllDe.swift; sourceTree = "<group>"; };
 		25436EC12A1354DC0043DB6D /* MyListBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListBlue.swift; sourceTree = "<group>"; };
 		2572405E2A14734700736DA4 /* TestPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPrint.swift; sourceTree = "<group>"; };
+		25F230EA2A15EC11006751A0 /* BlueToothListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				251D36FE2A03C79B00F4CD15 /* Info.plist */,
 				2524D14D2A063C5E00621D53 /* MyToast.swift */,
 				2524D1522A064CE000621D53 /* Testing.swift */,
+				25F230EA2A15EC11006751A0 /* BlueToothListController.swift */,
 			);
 			path = BluetoothSDK;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				2537CEA42A10CAF000C2B3B6 /* WifiListActivity.swift in Sources */,
 				2502E93A2A1386C50098F5FE /* HRMConstants.swift in Sources */,
 				251D36F12A03C79A00F4CD15 /* AppDelegate.swift in Sources */,
+				25F230EB2A15EC11006751A0 /* BlueToothListController.swift in Sources */,
 				251D36F32A03C79A00F4CD15 /* SceneDelegate.swift in Sources */,
 				2516EA442A10E683007C2E2A /* ListWifi.swift in Sources */,
 			);

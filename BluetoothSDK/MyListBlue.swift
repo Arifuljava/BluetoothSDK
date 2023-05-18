@@ -87,6 +87,7 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
                         } else {
                             // No peripheral is currently assigned
                             print("No peripheral assigned.")
+                            central.scanForPeripherals(withServices: nil, options: nil)
                         }
                 
             } else {
@@ -96,8 +97,10 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
         
         func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
             if !discoveredPeripherals.contains(peripheral) {
+               
                 discoveredPeripherals.append(peripheral)
                 tableView.reloadData()
+                
             }
           //  print(mainflagg.description)
             if peripheral.name?.contains("AC695X_1(BLE)") == true {
@@ -107,11 +110,14 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
                         self.peripheral.delegate = self
 
                         manager.connect(peripheral, options: nil)
-               
+                peripheral.delegate = self
+                peripheral.discoverServices(nil)
                 connectToPrinter()
                         print("My  discover peripheral", peripheral)
                 self.manager.stopScan()
-
+//check pherifiral
+               
+                
                 
                     }
             
@@ -210,6 +216,7 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
              isMyPeripheralConected = true //when connected change to true
              peripheral.delegate = self
              peripheral.discoverServices(nil)
+         
      
          print("Conn")
          var statusMessage = "Connected Successfully with this device : "+BEAN_NAME.description
@@ -228,6 +235,36 @@ class MyListBlue: UIViewController,  CBCentralManagerDelegate, CBPeripheralDeleg
         }
     func centralManager(_ central: CBCentralManager, connectionEventDidOccur event: CBConnectionEvent, for peripheral: CBPeripheral) {
         print("not connect")
+    }
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+            guard let services = peripheral.services else { return }
+            
+            for service in services {
+              peripheral.discoverCharacteristics(nil, for: service)
+                print("Discoveri")
+            }
+        }
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+            guard let characteristics = service.characteristics else { return }
+            
+            for characteristic in characteristics {
+                if characteristic.properties.contains(.writeWithoutResponse) {
+                    printerCharacteristic = characteristic
+                    var ttt = "fggfgfg"
+                    guard let data = ttt.data(using: .utf8) else { return }
+                    
+                    peripheral.writeValue(data, for: printerCharacteristic, type: .withoutResponse)
+                    print("print ready")
+                    break
+                }
+            }
+        }
+    private var printerCharacteristic: CBCharacteristic!
+    func printText(_ text: String) {
+        var ttt = "fggfgfg"
+        guard let data = ttt.data(using: .utf8) else { return }
+        
+        peripheral.writeValue(data, for: printerCharacteristic, type: .withoutResponse)
     }
     /*
      func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {

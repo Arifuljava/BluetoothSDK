@@ -421,7 +421,7 @@ class BluetoothDeList: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                     var    statusMessage = "Bluetooth Status: Alreay On. You can sync bluetooth devices "
                       SPIndicator.present(title: ""+statusMessage, message: "Bluetooth Status", preset: .done, from: .bottom)
                     
-                    let sec1 = self.storyboard?.instantiateViewController(identifier: "mmmu") as! MyListBlue
+                    let sec1 = self.storyboard?.instantiateViewController(identifier: "cotroller") as! BlueToothListController
                     self.present(sec1,animated: true)
                     
                     print("default")
