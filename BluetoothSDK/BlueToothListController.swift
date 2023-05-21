@@ -10,6 +10,12 @@ import CoreBluetooth
 import SwiftUI
 import SPIndicator
 import Printer
+import CoreBluetooth
+import UIKit
+import CoreGraphics
+
+let CR = 0x0d
+let ESC = 0x1B
 
 
 class BlueToothListController: UIViewController , CBCentralManagerDelegate, CBPeripheralDelegate, UITableViewDelegate, UITableViewDataSource{
@@ -50,7 +56,7 @@ class BlueToothListController: UIViewController , CBCentralManagerDelegate, CBPe
             if central.state == .poweredOn {
                 central.scanForPeripherals(withServices: nil, options: nil)
                 
-                centralManager?.cancelPeripheralConnection(peripheral)
+                
                 
             } else {
                 print("Bluetooth is not available.")
